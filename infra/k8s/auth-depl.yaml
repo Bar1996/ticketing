@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: barco2/auth
+          image: us.gcr.io/ticketing-local-440909/auth
 ---
 apiVersion: v1
 kind: Service
