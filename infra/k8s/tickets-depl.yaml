@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: tickets
-          image: barco2/tickets
+          image: us.gcr.io/ticketing-local-440909/tickets
           env:
             - name: NATS_CLIENT_ID
               valueFrom:

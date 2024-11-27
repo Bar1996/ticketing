@@ -5,12 +5,12 @@ deploy:
     manifests:
       - ./infra/k8s/*
 build:
-  local:
-    push: false
-  # googleCloudBuild:
-  #   projectId: ticketing-local-440909
+  # local:
+  #   push: false
+  googleCloudBuild:
+    projectId: ticketing-local-440909
   artifacts:
-    - image: barco2/auth
+    - image: us.gcr.io/ticketing-local-440909/auth
       context: auth
       docker:
         dockerfile: Dockerfile
@@ -18,7 +18,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: barco2/client
+    - image: us.gcr.io/ticketing-local-440909/client
       context: client
       docker:
         dockerfile: Dockerfile
@@ -26,7 +26,7 @@ build:
         manual:
           - src: '**/*.js'
             dest: .
-    - image: barco2/tickets
+    - image: us.gcr.io/ticketing-local-440909/tickets
       context: tickets
       docker:
         dockerfile: Dockerfile
@@ -34,7 +34,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: barco2/orders
+    - image: us.gcr.io/ticketing-local-440909/orders
       context: orders
       docker:
         dockerfile: Dockerfile

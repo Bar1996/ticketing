@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: barco2/client
+          image: us.gcr.io/ticketing-local-440909/client
 ---
 apiVersion: v1
 kind: Service
